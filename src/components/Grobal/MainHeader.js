@@ -41,6 +41,12 @@ const st ={
         height: 100%;
 
     `,
+    MainMenu: styled.a`
+        color: white;
+        margin-left: 30px;
+        text-decoration: none;
+        font-size: small;
+    `
 };
 
 
@@ -50,9 +56,11 @@ const MainHeader = ({isRootURL}) => {
         <st.Container isRootURL={isRootURL}>
             <st.SiteHeading>
                 <st.MainLink href="/" logo={process.env.PUBLIC_URL +"/whiteLogo.png"} title={"메인으로 이동"}>
-                    
                 </st.MainLink>
             </st.SiteHeading>
+            <st.MainMenu href="/Test" title={"메인으로 이동"}>Test</st.MainMenu>
+            <st.MainMenu href="/Cost" title={"메인으로 이동"}>Cost</st.MainMenu>
+            <st.MainMenu href="/Test" title={"메인으로 이동"}>Cost</st.MainMenu>
         </st.Container>
     </st.Header>
   );
