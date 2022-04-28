@@ -1,19 +1,19 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Home from './screens/Home';
-import Cost from './screens/Cost';
-import Mocvd from './screens/Mocvd';
-import Measurement from './screens/Measurement';
-import Test from './screens/Test';
-import NavBarElements from './components/NavBar/NavBarElements';
+import Home from './pages/Home';
+import Cost from './pages/Cost';
+import Mocvd from './pages/Mocvd';
+import Measurement from './pages/Measurement';
+import Test from './pages/Test';
 import Data from './data/myData'; 
+import MainHeader from './components/Grobal/MainHeader';
 
 
 function App() {
   const data=Data;
   return (
     <Router>
-      <NavBarElements/>
+      <MainHeader/>
       <Routes>
         <Route index element={<Home/>}/>
         <Route path="/Cost" element={<Cost/>}/>
