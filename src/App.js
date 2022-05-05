@@ -6,14 +6,15 @@ import Mocvd from './pages/Mocvd';
 import Measurement from './pages/Measurement';
 import Test from './pages/Test';
 import Data from './data/myData'; 
-import MainHeader from './components/Grobal/MainHeader';
+import Header from './components/Grobal/Header';
+import Footer from './components/Grobal/Footer';
 
 
 function App() {
   const data=Data;
   return (
     <Router>
-      <MainHeader/>
+      <Header/>
       <Routes>
         <Route index element={<Home/>}/>
         <Route path="/Cost" element={<Cost/>}/>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Test" element={<Test data={data}/>}/>
         <Route path="/Measurement" element={<Measurement/>}/>
       </Routes>
+      <Footer/>
     </Router>
   );
 }
