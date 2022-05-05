@@ -1,8 +1,11 @@
 import React from 'react'
+import Table from '../components/DataGrids/Table'
 
 const Cost = () => {
   return (
-    <div><h1>Cost</h1></div>
+    <div>
+      <Table/>
+    </div>
   )
 }
 

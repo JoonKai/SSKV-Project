@@ -16,8 +16,10 @@ const st ={
         align-items: center;
         width: 100%;
         height: 100%;
+        float : center;
         max-width: 1360px;
         margin: 0 auto;
+        font-family: 'Noto Sans KR';
         @media ${({theme, isRootURL})=>(!isRootURL ? theme.tablet : true)}{
             max-width: 950px;
         }
@@ -39,10 +41,11 @@ const st ={
         color: transparent;
         width: 100%;
         height: 40%;
-        margin-top:20px;
+        position : relative;
+        top: 20px;
     `,
     MainMenu: styled.a`
-        color: white;
+        color: #677fa7;
         margin-left: 30px;
         text-decoration: none;
         font-size: small;
@@ -59,8 +62,14 @@ const MainHeader = ({isRootURL}) => {
                 </st.MainLink>
             </st.SiteHeading>
             <st.MainMenu href="/Test" title={"메인으로 이동"}>Test</st.MainMenu>
-            <st.MainMenu href="/Cost" title={"메인으로 이동"}>Cost</st.MainMenu>
-            <st.MainMenu href="/Test" title={"메인으로 이동"}>Cost</st.MainMenu>
+            <st.MainMenu href="/Cost">비용관리</st.MainMenu>
+            <st.MainMenu href="/Mocvd">MOCVD</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
+            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
         </st.Container>
     </st.Header>
   );
