@@ -1,8 +1,7 @@
+import { AgGridReact } from 'ag-grid-react'
 import React from 'react'
 import styled from 'styled-components'
 import Table from '../components/DataGrids/Table'
-
-
 const St={
   MainContentContainer:styled.div`
     display: flex;
@@ -18,7 +17,7 @@ const St={
       margin-top: 0;
       margin-bottom: 0;
     }
-  `,
+  `
 
 }
 
@@ -26,9 +25,11 @@ const St={
 
 
 const Cost = () => {
+  
+
   return (
     <St.MainContentContainer>
-      
+      <Table/>
     </St.MainContentContainer>
   )
 }

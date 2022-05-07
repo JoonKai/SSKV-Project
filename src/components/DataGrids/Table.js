@@ -1,30 +1,33 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const Table = () => {
-  const data = [
-      {id:1,name: "손준석", age: 20},
-      {id:2,name: "이광수", age: 23},
-      {id:3,name: "손민혁", age: 24},
-      {id:4,name: "신우승", age: 27},
-  ]
-  const columns=[
+  const [rowData,setRowData] = useState([
+      {make:1,model: "손준석", price: 20},
+  ]);
+  const [columns,setColumns]=useState([
       {
-          headerName: "ID", field: "id"
+          headerName: "make", field: "make"
       },
       {
-          headerName: "Name", field: "name", checkboxSelection: true
+          headerName: "model", field: "model"
       },
       {
-          headerName: "Age", field:"age"
+          headerName: "price", field:"price"
       }
-  ]
+  ]);
   const defaultColDef={sortable:true, editable: true, filter: true}
+
+  useEffect(()=>{
+      fetch('https://www.ag-grid.com/example-assets/row-data.json')
+      .then(result =>result.json())
+      .then(rowData=>setRowData(rowData))
+  },[]);
   return (
-    <div className="ag-theme-alpine" style={{height: 400, width: 600}}>
-        <AgGridReact rowData={data} columnDefs={columns} defaultColDef={defaultColDef}/>
+    <div className="ag-theme-alpine" style={{height: 400, width: 1000}}>
+        <AgGridReact rowData={rowData} columnDefs={columns} defaultColDef={defaultColDef}/>
     </div>
   )
 }

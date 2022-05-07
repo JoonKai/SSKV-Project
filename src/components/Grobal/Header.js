@@ -66,10 +66,6 @@ const MainHeader = ({isRootURL}) => {
             <st.MainMenu href="/Mocvd">MOCVD</st.MainMenu>
             <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
             <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
-            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
-            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
-            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
-            <st.MainMenu href="/Measurement">계측설비</st.MainMenu>
         </st.Container>
     </st.Header>
   );
