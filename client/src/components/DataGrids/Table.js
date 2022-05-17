@@ -4,31 +4,41 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const Table = () => {
-  const [rowData,setRowData] = useState([
-      {make:1,model: "손준석", price: 20},
-  ]);
+  const [rowData,setRowData] = useState([]);
   const [columns,setColumns]=useState([
       {
-          headerName: "make", field: "make"
+          headerName: "id", field: "id"
       },
       {
-          headerName: "model", field: "model"
+          headerName: "image", field: "image"
       },
       {
-          headerName: "price", field:"price"
-      }
+          headerName: "name", field:"name"
+      },
+      {
+          headerName: "birthday", field:"birthday"
+      },
+      {
+          headerName: "gender", field:"gender"
+      },
+
   ]);
   const defaultColDef={sortable:true, editable: true, filter: true}
 
   useEffect(()=>{
-      fetch('https://www.ag-grid.com/example-assets/row-data.json')
+      fetch('/api/customers')
       .then(result =>result.json())
       .then(rowData=>setRowData(rowData))
+      
   },[]);
   return (
     <div className="ag-theme-alpine" style={{height: 400, width: 1000}}>
         <AgGridReact rowData={rowData} columnDefs={columns} defaultColDef={defaultColDef}/>
+        {
+            console.log(rowData)
+        }
     </div>
+    
   )
 }
 

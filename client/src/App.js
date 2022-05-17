@@ -10,6 +10,7 @@ import Header from './components/Grobal/Header';
 import Footer from './components/Grobal/Footer';
 
 
+
 function App() {
   const data=Data;
   return (
